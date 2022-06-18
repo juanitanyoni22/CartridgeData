@@ -30,29 +30,36 @@ window.addEventListener("DOMContentLoaded",()=>{
     }
 
 
-    const cartridge=[hp650,hp652]
+    const cartridges=[hp650,hp652,hp653]
     const search=document.getElementById("search") 
     search.addEventListener("click",()=>{
 
         const input=document.getElementById("input")
-        
-
-        if (input.value==hp650.name){
-            console.log(hp650.price$)
-        }
-        else if(input.value==hp652.name){
-            console.log(hp652.price$)
-        }
-        else if(input.value==hp653.name){
-            console.log(hp653.price$)
-        }
-         /*    cartridge.forEach((cartridge)=>{
-               
-
+        const inks=document.getElementById("inks")
+        const img=document.getElementById("img")
+        cartridges.forEach((cartridge)=>{
+           // console.log(" mother loop running")
+            
+            
             if (input.value==cartridge.name){
                 console.log(cartridge.price$)
+                inks.innerText=cartridge.price$
+                img.src=cartridge.imageSrc
+              
             }
-            }) */
+             else{
+            cartridge.compatiblePrinters.forEach((printer)=>{
+               // console.log(" child lop running")
+
+                console.log(printer)
+                 if (input.value==printer){
+                    inks.innerText=cartridge.price$
+                } 
+            })
+             }
+            }) 
+
+        
 
 
     })
