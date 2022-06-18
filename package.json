@@ -1,0 +1,19 @@
+{
+  "name": "cartridgedata",
+  "version": "1.0.0",
+  "description": "inhouse app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanitanyoni22/CartridgeData.git"
+  },
+  "author": "mac kawara, juanita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanitanyoni22/CartridgeData/issues"
+  },
+  "homepage": "https://github.com/juanitanyoni22/CartridgeData#readme"
+}
