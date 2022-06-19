@@ -30,6 +30,6 @@ database.once("open", async function () {
   });
 
   app.get("/", (req, res) => {
-    res;
+    res.send("hello word");
   });
 });
