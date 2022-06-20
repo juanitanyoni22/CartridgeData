@@ -7,6 +7,8 @@ const mongoose = require("mongoose");
 
 require("dotenv").config();
 
+/* Database Connection */
+
 const databaseName = "cartridges";
 const options = {
   useNewUrlParser: true,
@@ -15,7 +17,7 @@ const options = {
 };
 const uri =
   process.env
-    .MONGODB_URI; /* process.env.MONGODB_URI || process.env.MONGOLAB_URI || process.env.MONGOLHQ_URI  */
+    .MONGODB_URI; 
 
 let connection = mongoose.connect(uri || process.env.DB_URI, options);
 
