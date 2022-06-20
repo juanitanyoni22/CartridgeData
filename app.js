@@ -5,7 +5,6 @@ const PORT = process.env.PORT || 5000;
 
 const mongoose = require("mongoose");
 
-const { MongoClient } = require("mongodb");
 require("dotenv").config();
 
 const databaseName = "cartridges";
