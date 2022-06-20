@@ -7,14 +7,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    inputs.forEach((input) => {
+    await inputs.forEach((input) => {
       console.log(input.value);
       formData[input.name] = input.value;
     });
     console.log("submit clicked");
     console.log(formData);
+    sendform(formData);
   });
   const sendform = async (data) => {
+    console.log(formData);
     const result = document.getElementById("result");
     const options = {
       method: "POST",
