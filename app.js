@@ -15,9 +15,7 @@ const options = {
   useUnifiedTopology: true,
   dbname: databaseName,
 };
-const uri =
-  process.env
-    .MONGODB_URI; 
+const uri = process.env.MONGODB_URI;
 
 let connection = mongoose.connect(uri || process.env.DB_URI, options);
 
@@ -30,7 +28,8 @@ database.once("open", async function () {
     console.log("LISTEN ON" + PORT);
   });
 
-  app.get("/", (req, res) => {
-    res.send("hello word");
+  app.get("/upload", (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
   });
 });
