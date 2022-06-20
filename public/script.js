@@ -64,6 +64,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const cartridges = [hp650, hp652, hp653];
   const search = document.getElementById("search");
+  
   search.addEventListener("click", () => {
     const input = document.getElementById("input");
     const inks = document.getElementById("inks");
