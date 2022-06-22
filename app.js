@@ -27,6 +27,8 @@ database.once("open", async function () {
   app.listen(PORT, () => {
     console.log("LISTEN ON" + PORT);
   });
+  app.use(express.json());
+  app.use(bodyparser.urlencoded({ extended: false }));
   app.use(express.static("public"));
   app.get("/upload", (req, res) => {
     res.sendFile(__dirname + "/public/upload.html");
@@ -36,6 +38,4 @@ database.once("open", async function () {
     res.send(req.body);
   });
   app.use(express.static("public"));
-  app.use(express.json());
-  app.use(bodyparser.urlencoded({ extended: false }));
 });
