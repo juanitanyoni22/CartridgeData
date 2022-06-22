@@ -4,6 +4,7 @@ const express = require("express"),
 const PORT = process.env.PORT || 5000;
 
 const mongoose = require("mongoose");
+const { validationRules, validate }=require("./middleware/validation")
 
 require("dotenv").config();
 
@@ -31,9 +32,10 @@ database.once("open", async function () {
   app.use(bodyparser.urlencoded({ extended: false }));
   app.use(express.static("public"));
   app.get("/upload", (req, res) => {
+
     res.sendFile(__dirname + "/public/upload.html");
   });
-  app.post("/upload", (req, res) => {
+  app.post("/upload", validationRules(),validate,(req, res) => {
     console.log(req.body);
     res.send(req.body);
   });
